@@ -26,3 +26,19 @@ account.withdraw(200)
 account.withdraw(2000)
 print(account.get_balance())
 
+
+#Inheritance in OOPS
+class SavingsAccount(BankAccount):
+    def __init__(self,owner,balance, interest_rate):
+        super().__init__(owner,balance)
+        self.interest_rate = interest_rate
+
+    def add_interest(self):
+        self.balance += self.balance * self.interest_rate
+
+acc =SavingsAccount("Smarika", 1000, 0.1)
+acc.deposit(500)
+acc.add_interest()
+print(acc.get_balance())
+
+

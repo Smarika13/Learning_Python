@@ -32,3 +32,13 @@ with open("log.txt", "a") as f:
 with open("log.txt", "r") as f:
     content = f.read()
     print(content)
+
+with open("log.txt", "r") as f:
+    for line in f:
+        print(line)
+
+with open("log.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+        
+

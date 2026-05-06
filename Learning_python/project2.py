@@ -1,6 +1,13 @@
 #Contact Book CLI
 
 def add_contact(name,phone):
+    if not name.strip():
+        print("Name cannot be empty")
+        return
+    if not phone.isdigit():
+        print("Phone must contain digits only")
+        return
+    
     with open("contacts.txt", "a") as f:
         f.write(f"{name} | {phone}\n")
 
@@ -54,7 +61,7 @@ while (True):
 
     if a == "1":
         name = input("Enter the name you want to add:")
-        phone = int(input("Enter the number you want to add:"))
+        phone = (input("Enter the number you want to add:"))
         add_contact(name,phone)
     elif a == "2":
         view_contacts()
